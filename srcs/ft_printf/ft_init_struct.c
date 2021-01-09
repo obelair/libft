@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_init_struct.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 14:05:27 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/01/09 20:26:23 by obelair           #+#    #+#             */
+/*   Updated: 2021/01/09 20:26:23 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incs/ft_str.h"
+#include "../../incs/ft_printf.h"
 
-char	*ft_strchr(const char *s, int c)
+void	ft_init_struct(va_list *ap, t_format *tf, int fd)
 {
-	int i;
-
-	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return ((char *)&s[i]);
-		i++;
-	}
-	if (s[i] == c)
-		return ((char *)&s[i]);
-	return (0);
+	tf->ap = ap;
+	tf->minus = FALSE;
+	tf->zero = FALSE;
+	tf->hash = FALSE;
+	tf->space = FALSE;
+	tf->plus = FALSE;
+	tf->point = FALSE;
+	tf->spec = 0;
+	tf->wprec = 0;
+	tf->width = 0;
+	tf->lenvar = 0;
+	tf->base = 0;
+	tf->fd = fd;
 }

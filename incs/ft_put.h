@@ -13,6 +13,7 @@
 #ifndef FT_PUT_H
 # define FT_PUT_H
 
+# include <string.h>
 # include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd);

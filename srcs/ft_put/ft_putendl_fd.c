@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/libft.h"
+#include "../../incs/ft_put.h"
 
 void	ft_putendl_fd(char *s, int fd)
 {
@@ -19,6 +19,6 @@ void	ft_putendl_fd(char *s, int fd)
 	i = 0;
 	if (s)
 		while (s[i])
-			ft_putchar_fd(s[i++], fd);
-	ft_putchar_fd('\n', fd);
+			write(fd, &s[i++], 1);
+	write(1, "\n", 1);
 }

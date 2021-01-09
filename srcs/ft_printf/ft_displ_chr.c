@@ -1,40 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   ft_displ_chr.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/02 09:51:33 by obelair           #+#    #+#             */
+/*   Created: 2020/12/09 13:54:04 by obelair           #+#    #+#             */
 /*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
+#include "../../incs/ft_printf.h"
 
-int	ft_printf(const char *str, ...)
+void	ft_displ_chr(t_format *tf)
 {
-	va_list		param_info;
-	t_format	form;
-	int			i;
+	char	c;
 
-	va_start(param_info, str);
-	form.nbprint = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] != '%')
-		{
-			ft_putchar_fd(str[i], 1);
-			form.nbprint++;
-			i++;
-		}
-		else
-		{
-			ft_initformat(&param_info, &form, 1);
-			i += ft_conv(&form, str + i + 1);
-		}
-	}
-	va_end(param_info);
-	return (form.nbprint);
+	if (tf->spec == 'c')
+		c = va_arg(*(tf->ap), int);
+	else
+		c = '%';
+	tf->lenvar = 1;
+	tf->width--;
+	if (tf->zero && !tf->minus)
+		ft_displ_zero(tf, tf->width);
+	else if (!tf->zero && !tf->minus)
+		ft_displ_spc(tf, tf->width);
+	ft_putchar_fd(c, tf->fd);
+	if (tf->minus)
+		ft_displ_spc(tf, tf->width);
+	tf->nbprint++;
 }

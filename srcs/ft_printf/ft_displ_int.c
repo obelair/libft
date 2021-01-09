@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
+#include "../../incs/ft_printf.h"
 
 static void	ft_display(t_format *tf, long long val)
 {
@@ -33,9 +33,9 @@ void		ft_displ_int(t_format *tf, char *base)
 	else
 		val = va_arg(*(tf->ap), unsigned int);
 	if (ft_strchr("di", tf->spec))
-		tf->length = ft_intblen(val, ft_strlen(base));
+		tf->lenvar = ft_intblen(val, ft_strlen(base));
 	else
-		tf->length = ft_uintblen(val, ft_strlen(base));
+		tf->lenvar = ft_uintblen(val, ft_strlen(base));
 	tf->base = base;
 	ft_lencmp(tf, val);
 	ft_display(tf, val);

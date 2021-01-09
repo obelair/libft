@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/libft.h"
+#include "../../incs/ft_str.h"
 
 char	*ft_strnstr(const char *h, const char *n, size_t len)
 {
@@ -24,10 +24,8 @@ char	*ft_strnstr(const char *h, const char *n, size_t len)
 	{
 		j = 0;
 		if (h[i] == n[j])
-		{
 			while (h[i + j] == n[j] && i + j < len && h[i + j] && n[j])
 				j++;
-		}
 		if (!(n[j]))
 			return ((char *)&h[i]);
 		i++;

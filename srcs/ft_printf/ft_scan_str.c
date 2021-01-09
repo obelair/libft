@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_conv.c                                          :+:      :+:    :+:   */
+/*   ft_scan_str.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/03 14:41:34 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/01/09 20:28:09 by obelair           #+#    #+#             */
+/*   Updated: 2021/01/09 20:28:09 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
+#include "../../incs/ft_printf.h"
 
 static int	ft_spec(t_format *tf, const char *str, int i)
 {
@@ -99,7 +99,7 @@ static int	ft_width(t_format *tf, const char *str, int i)
 	return (ft_prec(tf, str, i));
 }
 
-int			ft_conv(t_format *tf, const char *str)
+int			ft_scan_str(t_format *tf, const char *str)
 {
 	int i;
 

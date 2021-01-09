@@ -10,23 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
+#include "../../incs/ft_printf.h"
 
 void	ft_lencmp(t_format *tf, long long val)
 {
 	if ((tf->width && val < 0) || tf->plus || tf->space)
-		tf->width = tf->width - ft_max(tf->length, tf->wprec) - 1;
+		tf->width = tf->width - ft_max(tf->lenvar, tf->wprec) - 1;
 	else if (tf->width && (tf->spec == 'p' ||
 		(ft_strchr("xX", tf->spec) && tf->hash && val)))
-		tf->width = tf->width - ft_max(tf->length, tf->wprec) - 2;
+		tf->width = tf->width - ft_max(tf->lenvar, tf->wprec) - 2;
 	else if (tf->width)
-		tf->width = tf->width - ft_max(tf->length, tf->wprec);
+		tf->width = tf->width - ft_max(tf->lenvar, tf->wprec);
 	if (ft_strchr("diouxXp", tf->spec) && tf->point && !tf->wprec
 		&& val == 0)
 	{
 		if (tf->width)
 			tf->width++;
-		tf->length = -1;
+		tf->lenvar = -1;
 	}
 	else if (!tf->point && !tf->wprec && tf->zero && !tf->minus)
 	{
@@ -35,5 +35,5 @@ void	ft_lencmp(t_format *tf, long long val)
 		tf->width = 0;
 	}
 	else if (tf->wprec)
-		tf->wprec -= tf->length;
+		tf->wprec -= tf->lenvar;
 }

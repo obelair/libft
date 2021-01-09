@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
+#include "../../incs/ft_printf.h"
 
 void	ft_displ_spc(t_format *tf, int i)
 {
@@ -60,7 +60,7 @@ void	ft_displ_pre(t_format *tf, long long *val)
 
 void	ft_displ_nbr(t_format *tf, unsigned long long val)
 {
-	if (tf->length < 0)
+	if (tf->lenvar < 0)
 		return ;
 	if (val > ft_strlen(tf->base) - 1)
 		ft_displ_nbr(tf, val / ft_strlen(tf->base));

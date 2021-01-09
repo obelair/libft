@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/libft.h"
+#include "../../incs/ft_str.h"
 
 static int	ft_trimend(const char *s1, const char *set)
 {

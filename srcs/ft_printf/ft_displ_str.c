@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/ft_printf.h"
+#include "../../incs/ft_printf.h"
 
 static void	ft_display(t_format *tf, char *str)
 {
@@ -18,15 +18,15 @@ static void	ft_display(t_format *tf, char *str)
 
 	i = 0;
 	if (tf->point)
-		while (i < ft_min(tf->length, tf->wprec))
+		while (i < ft_min(tf->lenvar, tf->wprec))
 			ft_putchar_fd(str[i++], tf->fd);
 	else
-		while (i < tf->length)
+		while (i < tf->lenvar)
 			ft_putchar_fd(str[i++], tf->fd);
 	if (tf->point)
-		tf->nbprint += ft_min(tf->length, tf->wprec);
+		tf->nbprint += ft_min(tf->lenvar, tf->wprec);
 	else
-		tf->nbprint += tf->length;
+		tf->nbprint += tf->lenvar;
 }
 
 void		ft_displ_str(t_format *tf)
@@ -35,11 +35,11 @@ void		ft_displ_str(t_format *tf)
 
 	if (!(str = va_arg(*(tf->ap), char *)))
 		str = "(null)";
-	tf->length = ft_strlen(str);
+	tf->lenvar = ft_strlen(str);
 	if (tf->width && tf->point)
-		tf->width -= ft_min(tf->length, tf->wprec);
+		tf->width -= ft_min(tf->lenvar, tf->wprec);
 	else if (tf->width)
-		tf->width -= tf->length;
+		tf->width -= tf->lenvar;
 	if (tf->zero && !tf->minus)
 		ft_displ_zero(tf, tf->width);
 	else if (!tf->zero && !tf->minus)

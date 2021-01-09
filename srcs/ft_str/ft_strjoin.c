@@ -10,9 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/libft.h"
+#include "../../incs/ft_str.h"
 
-char	*ft_strjoin(const char *s1, const char *s2)
+char	*ft_strjoin(char *s1, const char *s2)
 {
 	char	*cat;
 	int		i;
@@ -34,5 +34,6 @@ char	*ft_strjoin(const char *s1, const char *s2)
 		i++;
 	}
 	cat[ft_strlen(s1) + i] = 0;
+	free(s1);
 	return (cat);
 }

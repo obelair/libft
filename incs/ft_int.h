@@ -14,6 +14,7 @@
 # define FT_INT_H
 
 # include <stdlib.h>
+# include "ft_cmp.h"
 
 int		ft_atoi(const char *str);
 char	*ft_itoa(int n);

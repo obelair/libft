@@ -14,7 +14,10 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "incs/libft.h"
+# include "ft_cmp.h"
+# include "ft_str.h"
+# include "ft_int.h"
+# include "ft_put.h"
 
 # define FALSE	0
 # define TRUE	1
@@ -35,7 +38,7 @@ typedef struct	s_format
 	char		spec;
 	int			wprec;
 	int			width;
-	int			length;
+	int			lenvar;
 	char		*base;
 	int			fd;
 	int			nbprint;
@@ -43,10 +46,8 @@ typedef struct	s_format
 
 int				ft_printf(const char *str,
 					...) __attribute__((format(printf,1,2)));
-int				ft_conv(t_format *tf, const char *str);
-int				ft_intblen(long long n, long long base);
-int				ft_uintblen(unsigned long long n, unsigned long long base);
-void			ft_initformat(va_list *ap, t_format *tf, int fd);
+int				ft_scan_str(t_format *tf, const char *str);
+void			ft_init_struct(va_list *ap, t_format *tf, int fd);
 void			ft_displ_int(t_format *tf, char *base);
 void			ft_displ_addr(t_format *tf, char *base);
 void			ft_displ_nbr(t_format *tf, unsigned long long val);
@@ -56,9 +57,6 @@ void			ft_displ_pre(t_format *tf, long long *val);
 void			ft_displ_chr(t_format *tf);
 void			ft_displ_str(t_format *tf);
 void			ft_nptr(t_format *tf);
-int				ft_chrstr(int c, char *str);
-int				ft_min(int n1, int n2);
-int				ft_max(int n1, int n2);
 void			ft_lencmp(t_format *tf, long long val);
 
 #endif

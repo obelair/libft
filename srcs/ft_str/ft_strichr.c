@@ -10,18 +10,16 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/libft.h"
+#include "../../incs/ft_str.h"
 
 int	ft_strichr(const char *s, int c)
 {
 	int i;
 
 	i = 0;
-	while (s[i])
-	{
-		if (s[i] == c)
-			return (i);
+	while (s && s[i] && s[i] != c)
 		i++;
-	}
-	return (i);
+	if (s && s[i] == c)
+		return (i);
+	return (-1);
 }
