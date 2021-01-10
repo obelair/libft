@@ -16,14 +16,10 @@
 # include <string.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_str.h"
 
 # define BUFFER_SIZE 42
 
 int		get_next_line(int fd, char **line);
-
-size_t	ft_strlen(const char *s);
-int		ft_strchr(const char *s, int c);
-char	*ft_strjoin(char *s1, const char *s2);
-char	*ft_substr(const char *s, unsigned int start, size_t len);
 
 #endif

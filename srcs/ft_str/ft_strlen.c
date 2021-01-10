@@ -12,12 +12,11 @@
 
 #include "../../incs/ft_str.h"
 
-size_t	ft_strlen(const char *s)
+size_t	ft_strlen(const char *str)
 {
-	size_t	i;
-
-	i = 0;
-	while (s && s[i])
-		i++;
-	return (i);
+	if (!str)
+		return (0);
+	if (!*str)
+		return (1);
+	return (ft_strlen(str + 1) + 1);
 }

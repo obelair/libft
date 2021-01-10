@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "incs/get_next_line.h"
+#include "../../incs/get_next_line.h"
 
 char	*get_line(char *str)
 {
@@ -19,7 +19,7 @@ char	*get_line(char *str)
 
 	if (!str)
 		return (NULL);
-	if ((i = ft_strchr(str, '\n')) == -1)
+	if ((i = ft_strichr(str, '\n')) == -1)
 		tmp = ft_substr(str, 0, ft_strlen(str));
 	else
 		tmp = ft_substr(str, 0, i);
@@ -32,7 +32,7 @@ char	*get_keep_save(char *save)
 	size_t	lenstr;
 	int		i;
 
-	i = ft_strchr(save, '\n');
+	i = ft_strichr(save, '\n');
 	if (i == -1)
 	{
 		free(save);
@@ -54,7 +54,7 @@ int		get_next_line(int fd, char **line)
 	|| !(buff = malloc(sizeof(char) * (BUFFER_SIZE + 1))))
 		return (-1);
 	rd = 1;
-	while ((ft_strchr(save, '\n') == -1) && rd)
+	while ((ft_strichr(save, '\n') == -1) && rd)
 	{
 		if ((rd = read(fd, buff, BUFFER_SIZE)) == -1)
 		{
