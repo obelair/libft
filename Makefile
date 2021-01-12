@@ -6,7 +6,7 @@
 #    By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/24 13:31:58 by obelair           #+#    #+#              #
-#    Updated: 2020/12/18 17:01:01 by obelair          ###   ########lyon.fr    #
+#    Updated: 2021/01/11 14:40:13 by obelair          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -67,7 +67,7 @@ all:	init ${NAME}
 
 # === Compil === #
 
-${PATH_OBJ}/%.o: ${PATH_SRC}/*/%.c ${INCS}
+${PATH_OBJ}/%.o: ${PATH_SRC}/*/%.c ${PATH_INC}/*.h
 	@ echo " ${_GREEN}${_DIM}\\\\\ ${_END}${_GREEN}Compilation done!${_DIM} //${_CYAN}   --->   ${_END}${_YELLOW}| ${_BOLD}${_CYAN}$<${_END} "
 	@ ${CC} ${CFLAGS} -c $< -o $@
 
