@@ -6,7 +6,7 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 15:30:52 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 08:35:08 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/02/25 12:42:07 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include "ft_str.h"
+# include "ft_mem.h"
 
 # define BUFFER_SIZE 42
 

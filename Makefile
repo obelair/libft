@@ -6,7 +6,7 @@
 #    By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/24 13:31:58 by obelair           #+#    #+#              #
-#    Updated: 2021/01/11 14:40:13 by obelair          ###   ########lyon.fr    #
+#    Updated: 2021/02/25 08:53:31 by obelair          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ SRCS_INT	=	${addprefix ft_int/, ft_itoa.c ft_atoi.c ft_intlen.c}
 SRCS_LST	=	${addprefix ft_lst/, ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c}
 SRCS_MEM	=	${addprefix ft_mem/, ft_bzero.c ft_calloc.c ft_memccpy.c ft_memchr.c ft_memcmp.c ft_memcpy.c ft_memmove.c ft_memset.c}
 SRCS_PUT	=	${addprefix ft_put/, ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c}
-SRCS_STR	=	${addprefix ft_str/, ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_strjoin.c ft_strtrim.c ft_substr.c ft_strmapi.c ft_split.c}
+SRCS_STR	=	${addprefix ft_str/, ft_strchr.c ft_strdup.c ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_tolower.c ft_toupper.c ft_strjoin.c ft_strtrim.c ft_substr.c ft_strmapi.c ft_split.c ft_strichr.c}
 SRCS_PTF	=	${addprefix ft_printf/, ft_printf.c ft_scan_str.c ft_displ_addr.c ft_displ_chr.c ft_displ_int.c ft_displ_str.c ft_displ_util.c ft_init_struct.c ft_lencmp.c ft_nptr.c}
 SRCS_GNL	=	${addprefix gnl/, get_next_line.c}
 SRCS		=	${addprefix ${PATH_SRC}/, ${SRCS_CMP} ${SRCS_INT} ${SRCS_LST} ${SRCS_MEM} ${SRCS_PUT} ${SRCS_STR} ${SRCS_PTF} ${SRCS_GNL}}

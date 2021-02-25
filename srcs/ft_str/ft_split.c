@@ -6,11 +6,12 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/11/26 08:57:31 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/02/25 13:38:30 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incs/ft_str.h"
+#include "../../incs/ft_mem.h"
 
 static int		ft_nbword(const char *s, char c)
 {
@@ -41,7 +42,7 @@ char			**ft_split(const char *s, char c)
 
 	if (!s)
 		return (NULL);
-	if (!(split = malloc(sizeof(char *) * (ft_nbword(s, c) + 1))))
+	if (!(split = ft_calloc(ft_nbword(s, c) + 1, sizeof(char *))))
 		return (NULL);
 	i = 0;
 	beg = 0;
@@ -51,9 +52,9 @@ char			**ft_split(const char *s, char c)
 			beg++;
 		if (s[beg] != c && s[beg])
 		{
-			if (!(split[i] = ft_substr(s, beg, ft_strichr(s + beg, c) - beg)))
+			if (!(split[i] = ft_substr(s, beg, ft_strichr(s + beg, c))))
 				return (ft_freeall(split, i));
-			beg = ft_strichr(s + beg, c);
+			beg += ft_strichr(s + beg, c) + 1;
 			i++;
 		}
 	}

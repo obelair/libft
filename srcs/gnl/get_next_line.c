@@ -6,7 +6,7 @@
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/29 15:34:28 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 10:59:12 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/02/25 12:44:32 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		get_next_line(int fd, char **line)
 	int			rd;
 
 	if ((fd < 0 || !line || BUFFER_SIZE < 1)
-	|| !(buff = malloc(sizeof(char) * (BUFFER_SIZE + 1))))
+	|| !(buff = ft_calloc(BUFFER_SIZE + 1, sizeof(char))))
 		return (-1);
 	rd = 1;
 	while ((ft_strichr(save, '\n') == -1) && rd)
