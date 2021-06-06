@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_word_len.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 17:51:55 by obelair           #+#    #+#             */
-/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/03 10:33:12 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/03 10:43:01 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+size_t	ft_word_len(char **str)
 {
-	del(lst->content);
-	free(lst);
+	size_t	i;
+
+	i = 0;
+	while (str && str[i])
+		i++;
+	return (i);
 }

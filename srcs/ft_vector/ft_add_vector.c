@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_int.h                                           :+:      :+:    :+:   */
+/*   ft_add_vector.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 10:26:26 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 13:12:33 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/06 17:15:27 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/06 18:08:50 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_INT_H
-# define FT_INT_H
+#include "ft_vector.h"
 
-# include <stdlib.h>
-# include "ft_cmp.h"
+t_vector	ft_add_vector(t_vector u, t_vector v)
+{
+	t_vector	result;
 
-int		ft_atoi(const char *str);
-char	*ft_itoa(int n);
-int		ft_intblen(long long n, long long base);
-int		ft_uintblen(unsigned long long n, unsigned long long base);
-
-#endif
+	result.x = u.x + v.x;
+	result.y = u.y + v.y;
+	result.z = u.z + v.z;
+	return (result);
+}

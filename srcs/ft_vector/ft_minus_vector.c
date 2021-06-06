@@ -1,19 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_minus_vector.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 17:51:55 by obelair           #+#    #+#             */
-/*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/06 18:09:09 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/06 18:09:57 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_vector.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+t_vector	ft_minus_vector(t_vector u, t_vector v)
 {
-	del(lst->content);
-	free(lst);
+	t_vector	result;
+
+	result.x = u.x - v.x;
+	result.y = u.y - v.y;
+	result.z = u.z - v.z;
+	return (result);
 }

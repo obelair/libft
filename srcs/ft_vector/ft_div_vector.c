@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_put.h                                           :+:      :+:    :+:   */
+/*   ft_div_vector.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/01/08 12:33:19 by obelair           #+#    #+#             */
-/*   Updated: 2021/01/08 13:05:18 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/06 18:38:09 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/06 18:52:01 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUT_H
-# define FT_PUT_H
+#include "ft_vector.h"
 
-# include <string.h>
-# include <unistd.h>
+t_vector	ft_div_vector(t_vector u, float k)
+{
+	t_vector	result;
 
-void	ft_putchar_fd(char c, int fd);
-void	ft_putendl_fd(char *s, int fd);
-void	ft_putnbr_fd(int n, int fd);
-void	ft_putstr_fd(char *s, int fd);
-
-#endif
+	if (k)
+	{
+		result.x = u.x / k;
+		result.y = u.y / k;
+		result.z = u.z / k;
+	}
+	else
+	{
+		result.x = 0;
+		result.y = 0;
+		result.z = 0;
+	}
+	return (result);
+}

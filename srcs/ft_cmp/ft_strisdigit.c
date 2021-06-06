@@ -1,19 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
+/*   ft_strisdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 17:51:55 by obelair           #+#    #+#             */
+/*   Created: 2021/03/05 13:53:47 by obelair           #+#    #+#             */
 /*   Updated: 2021/05/14 09:55:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstdelone(t_list *lst, void (*del)(void *))
+int	ft_strisdigit(char *str)
 {
-	del(lst->content);
-	free(lst);
+	int	i;
+
+	i = 0;
+	while (str && str[i] && ft_isdigit(str[i]))
+		i++;
+	if (!str || (str[i] && !ft_isdigit(str[i])))
+		return (1);
+	return (0);
 }

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   ft_lstadd_void.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/12/29 15:30:52 by obelair           #+#    #+#             */
-/*   Updated: 2021/02/25 12:42:07 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/03 09:34:21 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/03 10:05:40 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_H
-# define GET_NEXT_LINE_H
+#include "libft.h"
 
-# include <string.h>
-# include <stdlib.h>
-# include <unistd.h>
-# include "ft_str.h"
-# include "ft_mem.h"
-
-# define BUFFER_SIZE 42
-
-int		get_next_line(int fd, char **line);
-
-#endif
+int	ft_lstadd_void(t_list **list, void *new, int back)
+{
+	if (back)
+	{
+		ft_lstadd_back(list, ft_lstnew(new));
+		if (!*list)
+			return (-1);
+	}
+	else
+	{
+		ft_lstadd_front(list, ft_lstnew(new));
+		if (!*list)
+			return (-1);
+	}
+	return (0);
+}
