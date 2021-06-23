@@ -1,30 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstclear.c                                      :+:      :+:    :+:   */
+/*   ft_strishexa.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/26 18:00:25 by obelair           #+#    #+#             */
-/*   Updated: 2021/06/23 10:58:43 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/06/17 13:19:30 by obelair           #+#    #+#             */
+/*   Updated: 2021/06/22 10:26:21 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstclear(t_list **lst, void (*del)(void *))
+int	ft_strishexa(char *str, int suffixe)
 {
-	t_list	*cur;
-	t_list	*tmp;
+	int	i;
 
-	cur = *lst;
-	if (!*lst)
-		return ;
-	while (cur)
+	i = 0;
+	if (suffixe)
 	{
-		tmp = cur->next;
-		ft_lstdelone(cur, del);
-		cur = tmp;
+		if (!str || str[0] != '0' || !ft_strchr("Xx", str[1]))
+			return (-1);
+		i = 2;
 	}
-	*lst = NULL;
+	while (str && str[i] && ft_strchr("0123456789abcdefABCDEF", str[i]))
+		i++;
+	if (!str || str[i])
+		return (-1);
+	return (0);
 }
