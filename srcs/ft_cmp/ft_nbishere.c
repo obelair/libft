@@ -1,39 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_nbishere.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42Lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/11/23 11:22:59 by obelair           #+#    #+#             */
-/*   Updated: 2021/07/31 23:14:38 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/07/31 23:15:18 by obelair           #+#    #+#             */
+/*   Updated: 2021/07/31 23:19:49 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_atoi(const char *str)
+int	ft_nbishere(int *tab, int nb, int size)
 {
-	int		i;
-	int		neg;
-	long	nbr;
+	int	i;
 
 	i = 0;
-	neg = 1;
-	nbr = 0;
-	while (str[i] == ' ' || (9 <= str[i] && str[i] <= 13))
+	while (i < size && tab[i] != nb)
 		i++;
-	if (str[i] == '-')
-		neg = -1;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	while (ft_isdigit(str[i]))
-	{
-		if (nbr > 2147483647)
-			return (-1);
-		else if (nbr < -2147483648)
-			return (0);
-		nbr = nbr * 10 + (str[i++] - '0');
-	}
-	return (neg * nbr);
+	if (i < size && tab[i] == nb)
+		return (1);
+	return (0);
 }

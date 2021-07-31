@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: obelair <obelair@student.42Lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 10:39:09 by obelair           #+#    #+#             */
-/*   Updated: 2021/06/23 12:46:19 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/07/31 23:20:22 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ int		ft_strisdigit(char *str);
 int		ft_strishexa(char *str, int suffixe);
 int		ft_max(int n1, int n2);
 int		ft_min(int n1, int n2);
+int		ft_nbishere(int *tab, int nb, int size);
 
 /*	==================
 	===   ft_str   ===
