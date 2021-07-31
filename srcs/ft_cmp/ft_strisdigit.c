@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strisdigit.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
+/*   By: obelair <obelair@student.42Lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/05 13:53:47 by obelair           #+#    #+#             */
-/*   Updated: 2021/06/16 14:54:29 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/07/31 15:56:25 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@ int	ft_strisdigit(char *str)
 	int	i;
 
 	i = 0;
-	while (str && str[i] && (str[i] == '-' || ft_isdigit(str[i])))
+	if (str[i] == '-')
 		i++;
-	if (!str || (str[i] && str[i] != '-' && !ft_isdigit(str[i])))
+	while (str && str[i] && ft_isdigit(str[i]))
+		i++;
+	if (!str || (str[i] && !ft_isdigit(str[i])))
 		return (1);
 	return (0);
 }
