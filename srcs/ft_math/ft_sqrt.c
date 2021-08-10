@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_dbl.c                                    :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: obelair <obelair@student.42Lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/06/01 14:37:08 by obelair           #+#    #+#             */
-/*   Updated: 2021/08/02 18:19:43 by obelair          ###   ########lyon.fr   */
+/*   Created: 2021/08/05 10:54:12 by obelair           #+#    #+#             */
+/*   Updated: 2021/08/06 15:57:23 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstadd_dbl(t_list **list, void **new, size_t size, int back)
+float	ft_sqrt(int	nb)
 {
-	size_t	i;
+	int		i;
+	float	sqrt;
 
-	i = 0;
-	if (!*list)
-		return (-1);
-	if (ft_lstadd_void(list, new, back))
-		return (-1);
-	while (i < size)
+	sqrt = 0;
+	i = 1;
+	while (nb >= i)
 	{
-		if (ft_lstadd_void(list, new[i], back))
-			return (-1);
-		i++;
+		nb -= i;
+		sqrt++;
+		i += 2;
 	}
-	return (0);
+	return (sqrt);
 }

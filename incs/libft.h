@@ -6,7 +6,7 @@
 /*   By: obelair <obelair@student.42Lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 10:39:09 by obelair           #+#    #+#             */
-/*   Updated: 2021/07/31 23:20:22 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/08/06 15:57:32 by obelair          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,6 +49,12 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), \
 			void (*del)(void *));
 t_list	*ft_lstnew(void *content);
 int		ft_lstsize(t_list *lst);
+
+/*	===================
+	===   ft_math   ===
+	===================	*/
+
+float	ft_sqrt(int	nb);
 
 /*	==================
 	===   ft_int   ===
