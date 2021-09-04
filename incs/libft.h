@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obelair <obelair@student.42Lyon.fr>        +#+  +:+       +#+        */
+/*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/01/08 10:39:09 by obelair           #+#    #+#             */
-/*   Updated: 2021/08/06 15:57:32 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/09/04 20:55:49 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int		ft_lstsize(t_list *lst);
 	===================	*/
 
 float	ft_sqrt(int	nb);
+int		ft_pow(int nb, int pow);
+int		ft_abs(int nb);
 
 /*	==================
 	===   ft_int   ===
