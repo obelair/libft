@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_intlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: obelair <obelair@student.42Lyon.fr>        +#+  +:+       +#+        */
+/*   By: obelair <obelair@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/12/07 09:49:31 by obelair           #+#    #+#             */
-/*   Updated: 2021/08/02 18:26:21 by obelair          ###   ########lyon.fr   */
+/*   Updated: 2021/09/06 21:46:49 by obelair          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int	ft_intblen(long long n, long long base)
 	if (nb < 0)
 	{
 		nb *= -1;
-		return (ft_intblen(nb / base, base) + 1);
+		return (ft_intblen(nb, base) + 1);
 	}
 	if (nb < base)
 		return (1);
